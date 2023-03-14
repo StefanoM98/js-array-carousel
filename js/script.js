@@ -24,7 +24,11 @@ itemsArrey[showItemInIndex].classList.add("active");
 
 // ATTIVIAMO I BOTTONI IN MODO DA CAMBIARE IMG AL CLICK
 const nextImg = document.querySelector(".next")
+const prevImg = document.querySelector (".prev")
+
+// GESTIAMO IL BOTTONE NEXT
 nextImg.addEventListener("click", function(){
+    prevImg.classList.remove("none")
     if (showItemInIndex < (itemsArrey.length - 1)){
         // FACCIAMO SCORRERE LE IMMAGINI
         itemsArrey[showItemInIndex].classList.remove("active");
@@ -37,5 +41,23 @@ nextImg.addEventListener("click", function(){
         if (showItemInIndex === itemsArrey.length - 1) {
             nextImg.classList.add("none");
         }
+    }
+})
+
+// GESTIAMO IL BOTTONE PREVIOUS
+prevImg.classList.add("none")
+
+prevImg.addEventListener("click", function() {
+    
+    nextImg.classList.remove("none")
+
+    itemsArrey[showItemInIndex].classList.remove("active");
+        
+    showItemInIndex--;
+
+    itemsArrey[showItemInIndex].classList.add("active");
+
+    if (showItemInIndex === 0) {
+        prevImg.classList.add("none")
     }
 })
