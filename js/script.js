@@ -20,4 +20,22 @@ const itemsArrey = document.getElementsByClassName("item")
 console.log(itemsArrey);
 
 let showItemInIndex = 0;
-itemsArrey[showItemInIndex].classList.add("active")
+itemsArrey[showItemInIndex].classList.add("active");
+
+// ATTIVIAMO I BOTTONI IN MODO DA CAMBIARE IMG AL CLICK
+const nextImg = document.querySelector(".next")
+nextImg.addEventListener("click", function(){
+    if (showItemInIndex < (itemsArrey.length - 1)){
+        // FACCIAMO SCORRERE LE IMMAGINI
+        itemsArrey[showItemInIndex].classList.remove("active");
+        
+        showItemInIndex++;
+
+        itemsArrey[showItemInIndex].classList.add("active");
+
+        // NASCONDIAMO IL BOTTONE UNA VOLTA ARRIVATI ALLA FINE DELLE IMMAGINI
+        if (showItemInIndex === itemsArrey.length - 1) {
+            nextImg.classList.add("none");
+        }
+    }
+})
