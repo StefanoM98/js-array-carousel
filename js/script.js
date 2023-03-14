@@ -5,7 +5,7 @@ console.log(imgArrey);
 const itemsContainer = document.querySelector(".slider-items")
 
 for (let i = 0; i < imgArrey.length; i++) {
-    const currentImg = imgArrey[i]
+    const currentImg = imgArrey[i];
 
     const sliderItems = `
         <div class="item">
@@ -20,7 +20,7 @@ const itemsArrey = document.getElementsByClassName("item")
 console.log(itemsArrey);
 
 let showItemInIndex = 0;
-itemsArrey[showItemInIndex].classList.add("active");
+itemsArrey[showItemInIndex].classList.add("active")
 
 // ATTIVIAMO I BOTTONI IN MODO DA CAMBIARE IMG AL CLICK
 const nextImg = document.querySelector(".next")
@@ -28,7 +28,7 @@ const prevImg = document.querySelector (".prev")
 
 // GESTIAMO IL BOTTONE NEXT
 nextImg.addEventListener("click", function(){
-    prevImg.classList.remove("none")
+    prevImg.classList.remove("none");
     if (showItemInIndex < (itemsArrey.length - 1)){
         // FACCIAMO SCORRERE LE IMMAGINI
         itemsArrey[showItemInIndex].classList.remove("active");
@@ -42,6 +42,7 @@ nextImg.addEventListener("click", function(){
             nextImg.classList.add("none");
         }
     }
+
 })
 
 // GESTIAMO IL BOTTONE PREVIOUS
@@ -61,3 +62,4 @@ prevImg.addEventListener("click", function() {
         prevImg.classList.add("none")
     }
 })
+
